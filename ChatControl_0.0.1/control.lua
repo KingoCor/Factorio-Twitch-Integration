@@ -79,8 +79,22 @@ function summon_biters()
 	player.print("Good luck to survive", color)
 end
 
+function random_tp()
+	local players = game.connected_players
+	local player = players[ math.random( #players ) ]
+
+	local r = 250
+	local position = { math.random(player.position.x - r, player.position.x + r), math.random(player.position.y - r, player.position.y + r) }
+
+	position = player.surface.find_non_colliding_position(player.character.name, position, 0, 1)
+	player.teleport(position)
+
+	local color = {r=255, g=0, b=0, a=1}
+	player.print("You've been teleported", color)	
+end
 
 
 commands.add_command("dup", "dress up you", dress_up)
 commands.add_command("gri", "give you random item", give_random_item)
 commands.add_command("sb", "summon biters around you", summon_biters)
+commands.add_command("rtp", "teleport you to random position", random_tp)

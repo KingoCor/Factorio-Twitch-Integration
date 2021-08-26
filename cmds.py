@@ -12,9 +12,10 @@ class Cmd(object):
 		self.next_use = time()
 
 cmds = [
-	Cmd(["gri", "всп"], Fcommands.give_random_item, cooldown=0),
-	Cmd(["sb", "в"], Fcommands.summon_biters, cooldown=0),
-	Cmd(["dup", "в"], Fcommands.dress_up, cooldown=0),
+	Cmd(["gri"], Fcommands.give_random_item, cooldown=0),
+	Cmd(["sb"], Fcommands.summon_biters, cooldown=0),
+	Cmd(["dup"], Fcommands.dress_up, cooldown=0),
+	Cmd(["rtp"], Fcommands.random_tp, cooldown=0),
 	Cmd(["off", "в"], Fcommands.shutdown, cooldown=0)
 ]
 

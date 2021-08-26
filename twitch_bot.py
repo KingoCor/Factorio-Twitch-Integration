@@ -3,8 +3,8 @@ from requests import get
 
 import cmds
 
-NAME = "your app name"
-OWNER = "your twitch nickname"
+NAME = "Name of your twitch aplication"
+OWNER = "Name of your channel"
 
 config=((open("twitch.config")).read()).split("\n")
 

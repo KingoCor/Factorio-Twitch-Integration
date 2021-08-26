@@ -4,7 +4,7 @@ from time import time
 import factorio_rcon
 
 BOOT_TIME = time()
-OWNER = "your twitch nickname"
+OWNER = "Name of your channel"
 
 client = factorio_rcon.RCONClient("0.0.0.0", 25575, "123")
 
@@ -27,6 +27,10 @@ def dress_up(bot, user ,*args):
 def summon_biters(bot, user ,*args):
 	client.send_command("/sb")
 	bot.send_message(f"@{user['name']} summon biters around")
+
+def random_tp(bot, user ,*args):
+	client.send_command("/rtp")
+	bot.send_message(f"@{user['name']} teleport you")
 
 
 def shutdown(bot, user, *args):
