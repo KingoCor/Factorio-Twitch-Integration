@@ -32,15 +32,18 @@ Otherwise if you already have a dedicated server, look up how to enable the RCON
 
 #### 3. Fill config.cfg
 Section `[Twitch]`
-`channel = ''` You channer name
-`client_id = ''` Client ID from par. 1.
-`token = ''`
-`username = ''` You channer name
+`channel = CHANNEL_NAME` The channel your bot will connect to
+`client_id = CLIENT_ID`  Your registered application's Client ID to allow API calls by the bot
+`token = TOKEN`  Your OAuth Token
+`username = USERNAME` The username of the chatbot
 
 Section `[Rcon]`
 `host=0.0.0.0` from `local-rcon-socket` before `:`
 `port=25575` from `local-rcon-socket` after `:`
 `password=my_password` from `local-rcon-password`
+
+Section `[System]`
+`debug=True or False` Enable or disable debug mode with log messages in console
 
 #### 4. Start the chatbot
 Run `python twitch_bot.py`

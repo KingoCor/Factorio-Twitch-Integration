@@ -9,14 +9,12 @@ config.read("config.cfg")
 BOOT_TIME = time()
 OWNER = config.get("Twitch", "channel")
 
-client = factorio_rcon.RCONClient(config.get("Rcon", "host"), config.get("Rcon", "port"), config.get("Rcon", "password"))
+client = factorio_rcon.RCONClient(config.get("Rcon", "host"), config.getint("Rcon", "port"), config.get("Rcon", "password"))
 
 def help(bot, prefix, cmds):
-    commands = filter(lambda cmd: cmd.only_owner==True, sorted(cmds, key=lambda cmd: cmd.callables[0]))
-    bot.send_message(f"Registered commands: "
-                     + ", ".join([f"{prefix}{cmd.callables[0]}" for cmd in commands]))
+    commands = filter(lambda cmd: cmd.only_owner==False, sorted(cmds, key=lambda cmd: cmd.callables[0]))
     bot.send_message(f"Registered commands (incl. aliases): "
-                     + ", ".join([f"{prefix}{'/'.join(cmd.callables)}" for cmd in commands]))
+                    + ", ".join([f"{prefix}{'/!'.join(cmd.callables)} {cmd.description}" for cmd in commands]))
 
 def give_random_item(bot, user, *args):
     client.send_command("/gri")
