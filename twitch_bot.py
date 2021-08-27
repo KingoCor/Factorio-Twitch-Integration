@@ -70,7 +70,6 @@ class Bot(SingleServerIRCBot):
         self.connection.privmsg(self.CHANNEL, message)
 
 if __name__ == "__main__":
-
     if log_enabled:
         logger.warning("Debug mode is enabled")
 

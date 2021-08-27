@@ -14,10 +14,11 @@ class Cmd(object):
         self.description = desciption
 
 cmds = [
-    Cmd(["gri", "всп"], Fcommands.give_random_item, desciption="Give random item" ),
-    Cmd(["sb", "ыи"],   Fcommands.summon_biters, desciption="Summon biters"),
-    Cmd(["dup", "вгз"], Fcommands.dress_up, desciption="Dress up you"),
-    Cmd(["off", "щаа"], Fcommands.shutdown, only_owner=True),
+    Cmd(["gri"], Fcommands.give_random_item, desciption="Give random item" ),
+    Cmd(["sb"], Fcommands.summon_biters, desciption="Summon biters"),
+    Cmd(["dup"], Fcommands.dress_up, desciption="Dress up you"),
+    Cmd(["rtp"], Fcommands.random_tp, cooldown=0, desciption="Teleport player to random point"),
+    Cmd(["off", "в"], Fcommands.shutdown, only_owner=True),
 ]
 
 

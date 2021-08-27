@@ -28,6 +28,10 @@ def summon_biters(bot, user, *args):
     client.send_command("/sb")
     bot.send_message(f"@{user['name']} summon biters around")
 
+def random_tp(bot, user ,*args):
+	client.send_command("/rtp")
+	bot.send_message(f"@{user['name']} teleport you")
+
 def shutdown(bot, user, *args):
     if user["name"].lower() == OWNER:
         bot.send_message("Shutting down.")
