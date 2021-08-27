@@ -1,0 +1,13 @@
+[Twitch]
+channel = 'CHANNEL_NAME'
+client_id = ''
+token = ''
+username = ''
+
+[Rcon]
+host = '127.0.0.1'
+port = '25575'
+password = 'secret'
+
+[System]
+debug = True
